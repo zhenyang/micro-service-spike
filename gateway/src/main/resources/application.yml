@@ -1,0 +1,22 @@
+server:
+  port: 8080
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8888/eureka
+zuul:
+  routes:
+    time:
+      path: /time/**
+      service-id: time-service
+      strip-prefix: false
+    date:
+      path: /date/**
+      service-id: date-service
+      strip-prefix: false
+    hello:
+      path: /hello/**
+      service-id: hello-service
+      strip-prefix: false
