@@ -1,0 +1,15 @@
+server:
+  port: 8800
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8888/eureka
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/zhenyang/config-repo
